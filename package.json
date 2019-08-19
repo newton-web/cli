@@ -1,0 +1,48 @@
+{
+  "name": "newton",
+  "version": "0.0.0",
+  "author": "Tanner @tdsprogramming",
+  "bin": {
+    "newton": "./bin/run"
+  },
+  "bugs": "https://github.com/tdsprogramming/newton/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.18",
+    "@oclif/config": "^1.13.3",
+    "@oclif/plugin-help": "^2.2.1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "globby": "^10.0.1",
+    "rimraf": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/newtoncli"
+  ],
+  "homepage": "https://github.com/tdsprogramming/newton",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "newtoncli/index.js",
+  "oclif": {
+    "commands": "./newtoncli/commands",
+    "bin": "newton",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "tdsprogramming/newton",
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}

@@ -19,7 +19,7 @@ $ npm install -g newton
 $ newton COMMAND
 running command...
 $ newton (-v|--version|version)
-newton/0.0.0 win32-x64 node-v10.13.0
+newton/1.0.0 win32-x64 node-v10.13.0
 $ newton --help [COMMAND]
 USAGE
   $ newton COMMAND
@@ -28,26 +28,21 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`newton hello`](#newton-hello)
+* [`newton createsuperuser`](#newton-createsuperuser)
 * [`newton help [COMMAND]`](#newton-help-command)
+* [`newton startapp APPNAME`](#newton-startapp-appname)
+* [`newton startproject PROJECTNAME`](#newton-startproject-projectname)
 
-## `newton hello`
+## `newton createsuperuser`
 
-Describe the command here
+Create a SuperUser
 
 ```
 USAGE
-  $ newton hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+  $ newton createsuperuser
 ```
 
-_See code: [src\commands\hello.js](https://github.com/tdsprogramming/newton/blob/v0.0.0/src\commands\hello.js)_
+_See code: [src\commands\createsuperuser.js](https://github.com/tdsprogramming/newton/blob/v1.0.0/src\commands\createsuperuser.js)_
 
 ## `newton help [COMMAND]`
 
@@ -65,4 +60,29 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src\commands\help.ts)_
+
+## `newton startapp APPNAME`
+
+Create a Newton App
+
+```
+USAGE
+  $ newton startapp APPNAME
+```
+
+_See code: [src\commands\startapp.js](https://github.com/tdsprogramming/newton/blob/v1.0.0/src\commands\startapp.js)_
+
+## `newton startproject PROJECTNAME`
+
+Create a Newton Project
+
+```
+USAGE
+  $ newton startproject PROJECTNAME
+
+OPTIONS
+  -t, --type=type  Get started with default or custom
+```
+
+_See code: [src\commands\startproject.js](https://github.com/tdsprogramming/newton/blob/v1.0.0/src\commands\startproject.js)_
 <!-- commandsstop -->

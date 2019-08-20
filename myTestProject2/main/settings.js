@@ -1,6 +1,6 @@
 module.exports = {
     database: {
-        databaseURL: 'mongodb://localhost/projectName'
+        databaseURL: 'mongodb://localhost/myTestProject2'
     },
 
     apps: [
@@ -23,5 +23,5 @@ module.exports = {
 
     userModel: 'default',
 
-    sessionSecretKey: 'someSecretKey'
+    sessionSecretKey: 'RANDOM'
 }

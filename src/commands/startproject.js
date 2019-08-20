@@ -1,6 +1,8 @@
 const {Command, flags} = require('@oclif/command')
 const fs = require('fs');
-let BASEDIR = '';
+const path = require('path');
+
+let BASEDIR = path.join(__dirname, "/../../");
 
 class StartProject extends Command {
     async run() {
@@ -15,12 +17,11 @@ class StartProject extends Command {
                 this.log(err);
             }
             else{
-                this.log(`Created ${projectName} directory!`);
+                this.log(`Created ${projectName} directory.`);
             }
         });
-
         //Initialize Node Project
-        await fs.readFile(BASEDIR +'newtonTemplate/newtonPackage.json', 'utf-8', (err, data)=>{
+        fs.readFile(BASEDIR +'newtonTemplate/newtonPackage.json', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -29,14 +30,14 @@ class StartProject extends Command {
                     if(err){
                         this.log(err);
                     }else{
-                        this.log(`Created package.json for ${projectName}!`)
+                        this.log(`Created package.json for ${projectName}.`)
                     }
                 });
             }
         });
 
         //Create app.js
-        await fs.readFile(BASEDIR +'newtonTemplate/app.js', 'utf-8', (err, data)=>{
+        fs.readFile(BASEDIR +'newtonTemplate/app.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -45,39 +46,41 @@ class StartProject extends Command {
                     if(err){
                         this.log(err);
                     }else{
-                        this.log(`Created app.js for ${projectName}!`)
+                        this.log(`Created app.js for ${projectName}.`)
                     }
                 });
             }
         });
 
         //Create project
-        let mainDir = await fs.mkdir(projectName + '/main', err => {
+        let mainDir = fs.mkdir(projectName + '/main', err => {
             if(err){
                 this.log(err);
             }else{
-                this.log(`Created main directory!`);
+                this.log(`Created main directory.`);
             }
         })
 
         //Create main/settings.js
-        await fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/settings.js', 'utf-8', (err, data)=>{
+        fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/settings.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
-                data = data.replace(/projectName/g, projectName)
+                let randomHash = 'RANDOM';
+                data = data.replace(/projectName/g, projectName).replace('someSecretKey', randomHash);
+
                 fs.writeFile(projectName + '/main/settings.js', data, (err, data)=>{
                     if(err){
                         this.log(err);
                     }else{
-                        this.log(`Created main/settings.js for ${projectName}!`)
+                        this.log(`Created main/settings.js for ${projectName}.`)
                     }
                 });
             }
         });
 
         //Create main/db.js
-        await fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/db.js', 'utf-8', (err, data)=>{
+        fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/db.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -86,14 +89,14 @@ class StartProject extends Command {
                     if(err){
                         this.log(err);
                     }else{
-                        this.log(`Created main/db.js for ${projectName}!`)
+                        this.log(`Created main/db.js for ${projectName}.`)
                     }
                 });
             }
         });
 
         //Create main/routes.js
-        await fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/routes.js', 'utf-8', (err, data)=>{
+        fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/routes.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -102,14 +105,14 @@ class StartProject extends Command {
                     if(err){
                         this.log(err);
                     }else{
-                        this.log(`Created main/routes.js for ${projectName}!`)
+                        this.log(`Created main/routes.js for ${projectName}.`)
                     }
                 });
             }
         });
 
         //Create main/views.js
-        await fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/views.js', 'utf-8', (err, data)=>{
+        fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/views.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -118,7 +121,7 @@ class StartProject extends Command {
                     if(err){
                         this.log(err);
                     }else{
-                        this.log(`Created main/views.js for ${projectName}!`)
+                        this.log(`Created main/views.js for ${projectName}.`)
                     }
                 });
             }

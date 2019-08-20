@@ -1,16 +1,16 @@
 module.exports = {
     database: {
-        databaseURL: 'mongodb://localhost/projectName'
+        databaseURL: 'mongodb://localhost/myTestProject'
     },
 
     apps: [
-        // 'appOne'
+        'myTestApp'
     ],
 
     views: {
         templateEngine: 'ejs',
         directories: [
-
+            'views'
         ]
     },
 
@@ -23,5 +23,5 @@ module.exports = {
 
     userModel: 'default',
 
-    sessionSecretKey: 'someSecretKey'
+    sessionSecretKey: 'RANDOM'
 }

@@ -15,11 +15,11 @@ newton
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g newton
+$ npm install -g @codexplore/newton
 $ newton COMMAND
 running command...
 $ newton (-v|--version|version)
-newton/1.0.0 win32-x64 node-v10.13.0
+@codexplore/newton/1.0.3 win32-x64 node-v10.13.0
 $ newton --help [COMMAND]
 USAGE
   $ newton COMMAND
@@ -42,7 +42,7 @@ USAGE
   $ newton createsuperuser
 ```
 
-_See code: [src\commands\createsuperuser.js](https://github.com/tdsprogramming/newton/blob/v1.0.0/src\commands\createsuperuser.js)_
+_See code: [src\commands\createsuperuser.js](https://github.com/tdsprogramming/newton/blob/v1.0.3/src\commands\createsuperuser.js)_
 
 ## `newton help [COMMAND]`
 
@@ -70,7 +70,7 @@ USAGE
   $ newton startapp APPNAME
 ```
 
-_See code: [src\commands\startapp.js](https://github.com/tdsprogramming/newton/blob/v1.0.0/src\commands\startapp.js)_
+_See code: [src\commands\startapp.js](https://github.com/tdsprogramming/newton/blob/v1.0.3/src\commands\startapp.js)_
 
 ## `newton startproject PROJECTNAME`
 
@@ -84,5 +84,5 @@ OPTIONS
   -t, --type=type  Get started with default or custom
 ```
 
-_See code: [src\commands\startproject.js](https://github.com/tdsprogramming/newton/blob/v1.0.0/src\commands\startproject.js)_
+_See code: [src\commands\startproject.js](https://github.com/tdsprogramming/newton/blob/v1.0.3/src\commands\startproject.js)_
 <!-- commandsstop -->

@@ -2,7 +2,7 @@ const {Command, flags} = require('@oclif/command')
 const fs = require('fs');
 const path = require('path');
 
-let BASEDIR = path.join(__dirname, "/../../");
+let BASEDIR = path.join(__dirname, "/../");
 
 class StartProject extends Command {
     async run() {
@@ -21,7 +21,7 @@ class StartProject extends Command {
             }
         });
         //Initialize Node Project
-        fs.readFile(BASEDIR +'newtonTemplate/newtonPackage.json', 'utf-8', (err, data)=>{
+        await fs.readFile(BASEDIR +'newtonTemplate/newtonPackage.json', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -37,7 +37,7 @@ class StartProject extends Command {
         });
 
         //Create app.js
-        fs.readFile(BASEDIR +'newtonTemplate/app.js', 'utf-8', (err, data)=>{
+        await fs.readFile(BASEDIR +'newtonTemplate/app.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -53,7 +53,7 @@ class StartProject extends Command {
         });
 
         //Create project
-        let mainDir = fs.mkdir(projectName + '/main', err => {
+        let mainDir = await fs.mkdir(projectName + '/main', err => {
             if(err){
                 this.log(err);
             }else{
@@ -62,7 +62,7 @@ class StartProject extends Command {
         })
 
         //Create main/settings.js
-        fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/settings.js', 'utf-8', (err, data)=>{
+        await fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/settings.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -80,7 +80,7 @@ class StartProject extends Command {
         });
 
         //Create main/db.js
-        fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/db.js', 'utf-8', (err, data)=>{
+        await fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/db.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -96,7 +96,7 @@ class StartProject extends Command {
         });
 
         //Create main/routes.js
-        fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/routes.js', 'utf-8', (err, data)=>{
+        await fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/routes.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{
@@ -112,7 +112,7 @@ class StartProject extends Command {
         });
 
         //Create main/views.js
-        fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/views.js', 'utf-8', (err, data)=>{
+        await fs.readFile(BASEDIR + 'newtonTemplate/newtonProject/views.js', 'utf-8', (err, data)=>{
             if(err){
                 this.log(err);
             }else{

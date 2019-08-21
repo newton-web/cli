@@ -2,7 +2,7 @@ const {Command, flags} = require('@oclif/command')
 const fs = require('fs');
 const path = require('path');
 
-let BASEDIR = path.join(__dirname, "/../../");
+let BASEDIR = "../";
 
 
 class StartApp extends Command {

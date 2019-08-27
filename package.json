@@ -1,9 +1,9 @@
 {
   "name": "@codexplore/newton",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "author": "Tanner @tdsprogramming",
   "bin": {
-    "newton": "./bin/run"
+    "newton-admin": "./bin/run"
   },
   "bugs": "https://github.com/codexplore-io/newton/issues",
   "dependencies": {
@@ -33,7 +33,7 @@
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
-    "bin": "newton",
+    "bin": "newton-admin",
     "plugins": [
       "@oclif/plugin-help"
     ]

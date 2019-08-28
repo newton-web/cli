@@ -1,11 +1,11 @@
 {
-  "name": "@codexplore/newton",
-  "version": "1.0.5",
+  "name": "@newton-web/cli",
+  "version": "1.0.0",
   "author": "Tanner @tdsprogramming",
   "bin": {
     "newton-admin": "./bin/run"
   },
-  "bugs": "https://github.com/codexplore-io/newton/issues",
+  "bugs": "https://github.com/newton-web/cli/issues",
   "dependencies": {
     "@oclif/command": "^1.5.18",
     "@oclif/config": "^1.13.3",
@@ -25,7 +25,7 @@
     "/oclif.manifest.json",
     "/src"
   ],
-  "homepage": "https://github.com/codexplore-io/newton",
+  "homepage": "https://github.com/newton-web/cli",
   "keywords": [
     "oclif"
   ],
@@ -38,7 +38,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "codexplore-io/newton",
+  "repository": "newton-web/cli",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
     "prepack": "oclif-dev manifest && oclif-dev readme",

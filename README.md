@@ -15,11 +15,11 @@ newton
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g @codexplore/newton
+$ npm install -g @newton-web/cli
 $ newton-admin COMMAND
 running command...
 $ newton-admin (-v|--version|version)
-@codexplore/newton/1.0.5 win32-x64 node-v10.13.0
+@newton-web/cli/1.0.0 win32-x64 node-v10.13.0
 $ newton-admin --help [COMMAND]
 USAGE
   $ newton-admin COMMAND
@@ -42,7 +42,7 @@ USAGE
   $ newton-admin createsuperuser
 ```
 
-_See code: [src\commands\createsuperuser.js](https://github.com/codexplore-io/newton/blob/v1.0.5/src\commands\createsuperuser.js)_
+_See code: [src\commands\createsuperuser.js](https://github.com/codexplore-io/newton/blob/v1.0.0/src\commands\createsuperuser.js)_
 
 ## `newton-admin help [COMMAND]`
 
@@ -70,7 +70,7 @@ USAGE
   $ newton-admin startapp APPNAME
 ```
 
-_See code: [src\commands\startapp.js](https://github.com/codexplore-io/newton/blob/v1.0.5/src\commands\startapp.js)_
+_See code: [src\commands\startapp.js](https://github.com/codexplore-io/newton/blob/v1.0.0/src\commands\startapp.js)_
 
 ## `newton-admin startproject PROJECTNAME`
 
@@ -84,5 +84,5 @@ OPTIONS
   -t, --type=type  Get started with default or custom
 ```
 
-_See code: [src\commands\startproject.js](https://github.com/codexplore-io/newton/blob/v1.0.5/src\commands\startproject.js)_
+_See code: [src\commands\startproject.js](https://github.com/codexplore-io/newton/blob/v1.0.0/src\commands\startproject.js)_
 <!-- commandsstop -->

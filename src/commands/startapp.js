@@ -2,12 +2,11 @@ const {Command, flags} = require('@oclif/command')
 const fs = require('fs');
 const path = require('path');
 
-let BASEDIR = "../";
+let BASEDIR = path.join(__dirname, "/../");
 
 
 class StartApp extends Command {
     async run() {
-        console.log(BASEDIR)
         const {flags} = this.parse(StartApp);
         const {args} = this.parse(StartApp);
         const appName = args.appName;
@@ -34,12 +33,12 @@ class StartApp extends Command {
             }
         });
         const data = "";
-        fs.readFile(BASEDIR +'newtonTemplate/newtonApp/routes.js', 'utf-8', (err, data)=>{
+        await fs.readFile(BASEDIR +'newtonTemplate/newtonApp/routes.js', 'utf-8', async (err, data)=>{
             if(err){
                 this.log(err);
             }else{
                 data = data.replace(/appName/g, appName)
-                fs.writeFile(appName + '/'+'routes.js', data, (err, data)=>{
+                await fs.writeFile(appName + '/'+'routes.js', data, (err, data)=>{
                     if(err){
                         this.log(err);
                     }else{

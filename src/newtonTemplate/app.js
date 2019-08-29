@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const session = require('express-session');
+const path = require('path');
 
 const settings = require('./main/settings');
 
@@ -10,9 +11,11 @@ app.use(express.static(__dirname + settings.staticURL));
 let templateDirs = [];
 
 settings.views.directories.forEach((item, index)=>{
-    templateDirs.push(__dirname + "/" + item);
-})
-
+    templateDirs.push(path.join(__dirname, item));
+});
+settings.apps.forEach((item, index)=>{
+    templateDirs.push(path.join(__dirname, item, 'views'));
+});
 app.set('views', templateDirs);
 
 //Your template engine as defined in settings.js
